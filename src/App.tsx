@@ -50,23 +50,36 @@ const App = () => {
   return (
     <div className="App">
       <div className="header">
-        <div className="inputContainer">
-          <input
-            type="text"
-            placeholder="Your Task"
-            name="task"
-            value={formState.task}
-            onChange={handleChange}
-          />
-          <input
-            type="date"
-            name="date"
-            value={formState.date}
-            onChange={handleChange}
-          />
-        </div>
-        <button onClick={addTask}>Add Task</button>
+        TODO List
       </div>
+
+      <div className="contentContainer">
+        <span>Tasks</span>
+        <button className="modalButton" onClick={() => setIsModalOpen(true)}>Add Task</button>
+      </div>
+      
+      
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2 className="modalHeader">New Task</h2>
+        <div>
+          <div className="inputContainer">
+            <input
+              type="text"
+              placeholder="Your Task"
+              name="task"
+              value={formState.task}
+              onChange={handleChange}
+            />
+            <input
+              type="date"
+              name="date"
+              value={formState.date}
+              onChange={handleChange}
+            />
+          </div>
+          <button className="addTask" onClick={addTask}>Add Task</button>
+        </div>
+      </Modal>
 
       <div className="todoList">
         {todoList.map((task) => (
@@ -74,12 +87,7 @@ const App = () => {
         ))}
       </div>
 
-      <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
-
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2>Добавить задачу</h2>
-        <p>Здесь можно разместить форму или что угодно.</p>
-      </Modal>
+      
     </div>
   );
 };
