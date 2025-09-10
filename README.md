@@ -2,6 +2,8 @@
 
 A simple and lightweight Todo List built with **React** and **TypeScript**.
 This project is designed to practice hooks, controlled inputs and reusable components.
+You can visit the website [here](https://genies-todo-list.onrender.com)
+
 
 ## ⚡ Features
 
