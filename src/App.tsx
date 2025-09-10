@@ -3,6 +3,7 @@ import "./App.css";
 import { ITask } from "./interfaces";
 import TodoTask from "./components/TodoTask";
 import Modal from "./components/Modal";
+import bg from "./assets/bg-2.jpg"
 
 const App = () => {
   const [formState, setFormState] = useState({
@@ -49,8 +50,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="header">
-        TODO List
+      <div className="header" style={{
+        backgroundImage: `linear-gradient(rgba(60,60,60,0.5), rgba(60,60,60,0.5)), url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}>
+        <span className="logo">TODO</span>
       </div>
 
       <div className="contentContainer">
